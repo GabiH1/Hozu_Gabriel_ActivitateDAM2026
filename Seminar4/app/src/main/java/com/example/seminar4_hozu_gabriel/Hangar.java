@@ -3,33 +3,13 @@ package com.example.seminar4_hozu_gabriel;
 import java.io.Serializable;
 
 public class Hangar implements Serializable {
-    private String nume;
-    private int capacitate;
-    private boolean esteDisponibil;
-    private String tip;
-    private String locatie;
-    private float rating;
-    private boolean arePaza;
-
-    public Hangar() {
-        this.nume = "";
-        this.capacitate = 0;
-        this.esteDisponibil = false;
-        this.tip = "";
-        this.locatie = "";
-        this.rating = 0f;
-        this.arePaza = false;
-    }
-
-    public Hangar(String nume, int capacitate, boolean esteDisponibil, String tip, String locatie, float rating, boolean arePaza) {
-        this.nume = nume;
-        this.capacitate = capacitate;
-        this.esteDisponibil = esteDisponibil;
-        this.tip = tip;
-        this.locatie = locatie;
-        this.rating = rating;
-        this.arePaza = arePaza;
-    }
+    String nume;
+    int capacitate;
+    boolean esteDisponibil;
+    String tip;
+    String locatie;
+    float rating;
+    boolean arePaza;
 
     public String getNume() {
         return nume;
@@ -87,14 +67,27 @@ public class Hangar implements Serializable {
         this.arePaza = arePaza;
     }
 
+    public Hangar(String nume, int capacitate, boolean esteDisponibil, String tip, String locatie, float rating, boolean arePaza) {
+        this.nume = nume;
+        this.capacitate = capacitate;
+        this.esteDisponibil = esteDisponibil;
+        this.tip = tip;
+        this.locatie = locatie;
+        this.rating = rating;
+        this.arePaza = arePaza;
+    }
+
     @Override
     public String toString() {
-        return "Hangar: nume='" + nume + '\'' +
+        return "Hangar{" +
+                "nume='" + nume + '\'' +
                 ", capacitate=" + capacitate +
-                ", disponibil=" + esteDisponibil +
+                ", esteDisponibil=" + esteDisponibil +
                 ", tip='" + tip + '\'' +
                 ", locatie='" + locatie + '\'' +
                 ", rating=" + rating +
-                ", arePaza=" + arePaza;
+                ", arePaza=" + arePaza +
+                '}';
     }
+
 }

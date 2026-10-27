@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -8,38 +9,25 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvTitluMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seminar 4 - Hozu Gabriel"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp" />
 
     <Button
-        android:id="@+id/btnAdauga"
+        android:id="@+id/btnDeschidereActivitateAdaugare"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adaugă Hangar"
-        android:layout_marginBottom="24dp" />
+        android:text="Adauga hangar"
+        android:onClick="deschideActivitateAdaugare"
+        />
 
-    <TextView
-        android:id="@+id/tvRezultatHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Obiectul primit:"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
-
-    <TextView
-        android:id="@+id/tvRezultat"
+    <Button
+        android:id="@+id/btnDeschidereActivitateAdaugareAI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Niciun obiect adăugat încă."
-        android:textSize="14sp"
-        android:padding="12dp"
-        android:background="#EEEEEE" />
+        android:layout_marginTop="12dp"
+        android:text="Adauga hangar (AI Design)"
+        android:backgroundTint="#4C51BF"
+        android:textColor="@android:color/white"
+        android:onClick="deschideActivitateAdaugareAI"
+        />
+
 
 </LinearLayout>

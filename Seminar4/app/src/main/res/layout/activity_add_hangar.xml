@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".AddHangarActivity">
 
     <LinearLayout
         android:id="@+id/linearLayoutForm"
@@ -15,12 +18,10 @@
             android:id="@+id/tvTitluForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Formular Adăugare Hangar (Hozu Gabriel)"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:text="Formular Hangar nou"
+            android:textSize="25sp"
             android:layout_marginBottom="16dp" />
 
-        <!-- TextView & EditText for Nume -->
         <TextView
             android:id="@+id/tvNume"
             android:layout_width="wrap_content"
@@ -28,37 +29,36 @@
             android:text="Nume Hangar:" />
 
         <EditText
-            android:id="@+id/etNume"
+            android:id="@+id/textNume"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Introduceți numele"
-            android:inputType="text"
+            android:hint="Nume Hangar"
+            android:textSize="20sp"
             android:layout_marginBottom="12dp" />
 
-        <!-- TextView & EditText for Capacitate -->
         <TextView
             android:id="@+id/tvCapacitate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Capacitate:" />
+            android:text="Capacitate Hangar:" />
 
         <EditText
-            android:id="@+id/etCapacitate"
+            android:id="@+id/textCapacitate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Introduceți capacitatea (număr)"
+            android:hint="Capacitate Hangar"
             android:inputType="number"
+            android:textSize="20sp"
             android:layout_marginBottom="12dp" />
 
-        <!-- CheckBox -->
         <CheckBox
-            android:id="@+id/cbDisponibil"
-            android:layout_width="wrap_content"
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Este disponibil"
+            android:textSize="20sp"
+            android:text="Este Disponibil?"
             android:layout_marginBottom="12dp" />
 
-        <!-- RadioGroup & RadioButton -->
         <TextView
             android:id="@+id/tvTip"
             android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
             android:text="Tip Hangar:" />
 
         <RadioGroup
-            android:id="@+id/rgTip"
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -87,49 +87,49 @@
                 android:layout_marginStart="16dp" />
         </RadioGroup>
 
-        <!-- Spinner -->
         <TextView
             android:id="@+id/tvLocatie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Locație:" />
+            android:text="Locatie:" />
 
         <Spinner
-            android:id="@+id/spLocatie"
+            android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp" />
 
-        <!-- RatingBar -->
         <TextView
             android:id="@+id/tvRating"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rating:" />
+            android:text="Rating Hangar"
+            android:textSize="20sp" />
 
         <RatingBar
-            android:id="@+id/rbRating"
+            android:id="@+id/ratingBar"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
-            android:rating="3.5"
             android:stepSize="0.5"
             android:layout_marginBottom="12dp" />
 
-        <!-- Switch -->
         <Switch
-            android:id="@+id/swPaza"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Are pază permanentă"
-            android:layout_marginBottom="20dp" />
-
-        <!-- Button -->
-        <Button
-            android:id="@+id/btnSalveaza"
+            android:id="@+id/switch1"
+            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salvează Obiect" />
+            android:text="Are Paza?"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btnSalvareDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salveaza Hangar"
+            android:onClick="culegeDate" />
 
     </LinearLayout>
 </ScrollView>
