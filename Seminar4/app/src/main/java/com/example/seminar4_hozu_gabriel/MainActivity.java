@@ -12,7 +12,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    ArrayList<Hangar> hangare=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +64,22 @@ public class MainActivity extends AppCompatActivity {
 
                 Hangar hangar = new Hangar(nume, capacitate, esteDisponibil, tip, locatie, rating, arePaza);
 
+                hangare.add(hangar);
                 TextView tv = findViewById(R.id.textView);
-                tv.setText(hangar.toString());
+                if (tv != null) {
+                    tv.setText(hangare.toString());
+                }
+
             }
 
         }
 
 
+    }
+
+    public void deschideActivitate3(View view) {
+        Intent it=new Intent(this, lista_hangare.class);
+        it.putExtra("hangare", hangare);
+        startActivityForResult(it,30);
     }
 }

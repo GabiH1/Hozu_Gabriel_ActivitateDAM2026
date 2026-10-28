@@ -29,5 +29,20 @@
         android:onClick="deschideActivitateAdaugareAI"
         />
 
+    <Button
+        android:id="@+id/btnDeschidereListaHangare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista Hangare"
+        android:onClick="deschideActivitate3"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
 
 </LinearLayout>
