@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,25 @@ public class lista_hangare extends AppCompatActivity {
                     hangare
             );
             lv.setAdapter(adapter);
+
+            // 3. Afisare Toast la selectarea unui element din ListView
+            lv.setOnItemClickListener((parent, view, position, id) -> {
+                Hangar hangar = hangare.get(position);
+                Toast.makeText(getApplicationContext(), hangar.toString(), Toast.LENGTH_SHORT).show();
+            });
+
+            // 4. Stergere element la LongItemClick din ListView si din lista
+            lv.setOnItemLongClickListener((parent, view, position, id) -> {
+                hangare.remove(position);
+                adapter.notifyDataSetChanged();
+                Toast.makeText(getApplicationContext(), "Obiect sters!", Toast.LENGTH_SHORT).show();
+
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("hangare_upd", hangare);
+                setResult(RESULT_OK, resultIntent);
+
+                return true;
+            });
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

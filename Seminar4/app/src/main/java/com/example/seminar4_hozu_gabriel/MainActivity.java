@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Hangar> hangare=new ArrayList<>();
+    ArrayList<Hangar> hangare = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,14 +72,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+        } else if (requestCode == 30 && resultCode == RESULT_OK && data != null) {
+            ArrayList<Hangar> hangareUpd = (ArrayList<Hangar>) data.getSerializableExtra("hangare_upd");
+            if (hangareUpd != null) {
+                hangare = hangareUpd;
+                TextView tv = findViewById(R.id.textView);
+                if (tv != null) {
+                    tv.setText(hangare.toString());
+                }
+            }
         }
 
 
     }
 
     public void deschideActivitate3(View view) {
-        Intent it=new Intent(this, lista_hangare.class);
+        Intent it = new Intent(this, lista_hangare.class);
         it.putExtra("hangare", hangare);
-        startActivityForResult(it,30);
+        startActivityForResult(it, 30);
     }
 }
