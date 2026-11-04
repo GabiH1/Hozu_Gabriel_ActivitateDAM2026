@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deschideActivitate3(View view) {
-        Intent it = new Intent(this, lista_hangare.class);
+        Intent it = new Intent(this, ListaHangare.class);
         it.putExtra("hangare", hangare);
         startActivityForResult(it, 30);
     }

@@ -2,7 +2,6 @@ package com.example.seminar4_hozu_gabriel;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
-public class lista_hangare extends AppCompatActivity {
+public class ListaHangare extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +27,20 @@ public class lista_hangare extends AppCompatActivity {
         ArrayList<Hangar> hangare = (ArrayList<Hangar>) intent.getSerializableExtra("hangare");
 
         if (hangare != null) {
-            ArrayAdapter<Hangar> adapter = new ArrayAdapter<>(
+            HangarAdapter adapter = new HangarAdapter(
                     this,
-                    android.R.layout.simple_list_item_1,
-                    hangare
+                    hangare,
+                    R.layout.items_hangare
             );
             lv.setAdapter(adapter);
 
-            // 3. Afisare Toast la selectarea unui element din ListView
+            // Afisare Toast la selectarea unui element din ListView
             lv.setOnItemClickListener((parent, view, position, id) -> {
                 Hangar hangar = hangare.get(position);
                 Toast.makeText(getApplicationContext(), hangar.toString(), Toast.LENGTH_SHORT).show();
             });
 
-            // 4. Stergere element la LongItemClick din ListView si din lista
+            // Stergere element la LongItemClick din ListView si din lista
             lv.setOnItemLongClickListener((parent, view, position, id) -> {
                 hangare.remove(position);
                 adapter.notifyDataSetChanged();

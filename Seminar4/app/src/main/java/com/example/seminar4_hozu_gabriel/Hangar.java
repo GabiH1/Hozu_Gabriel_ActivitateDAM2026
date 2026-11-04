@@ -1,8 +1,11 @@
 package com.example.seminar4_hozu_gabriel;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 
-public class Hangar implements Serializable {
+public class Hangar implements Parcelable {
     String nume;
     int capacitate;
     boolean esteDisponibil;
@@ -10,6 +13,44 @@ public class Hangar implements Serializable {
     String locatie;
     float rating;
     boolean arePaza;
+
+    protected Hangar(Parcel in) {
+        nume = in.readString();
+        capacitate = in.readInt();
+        esteDisponibil = in.readByte() != 0;
+        tip = in.readString();
+        locatie = in.readString();
+        rating = in.readFloat();
+        arePaza = in.readByte() != 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nume);
+        dest.writeInt(capacitate);
+        dest.writeByte((byte) (esteDisponibil ? 1 : 0));
+        dest.writeString(tip);
+        dest.writeString(locatie);
+        dest.writeFloat(rating);
+        dest.writeByte((byte) (arePaza ? 1 : 0));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Hangar> CREATOR = new Creator<Hangar>() {
+        @Override
+        public Hangar createFromParcel(Parcel in) {
+            return new Hangar(in);
+        }
+
+        @Override
+        public Hangar[] newArray(int size) {
+            return new Hangar[size];
+        }
+    };
 
     public String getNume() {
         return nume;

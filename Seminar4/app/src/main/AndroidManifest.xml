@@ -28,7 +28,7 @@
             android:name=".AddHangarActivityAI"
             android:exported="false" />
         <activity
-            android:name=".lista_hangare"
+            android:name=".ListaHangare"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
