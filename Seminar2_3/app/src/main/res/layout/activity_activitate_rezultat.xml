@@ -7,4 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".ActivitateRezultat">
 
+    <TextView
+        android:id="@+id/tvRezultatTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activitate Rezultat"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnTrimiteRezultat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnTrimiteRezultat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="trimiteRezultat"
+        android:text="Trimite Rezultat Înapoi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
