@@ -24,4 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Exersare_Test"
 include(":app")
- 
+include(":app:exersare2")
+include(":app:simularetest")
