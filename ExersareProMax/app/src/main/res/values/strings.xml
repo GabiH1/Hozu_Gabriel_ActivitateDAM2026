@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">maiMultaExersare</string>
+    <string name="btn_adauga_tableta">Adauga tableta</string>
+    <string name="btn_lista_tablete">Lista tablete</string>
+    <string name="label_id_tableta">Id tableta:</string>
+    <string name="hint_id_tableta">Id tableta</string>
+    <string name="label_model">Model:</string>
+    <string name="label_spatiu_memorie">Spatiu de memorie:</string>
+    <string name="hint_spatiu_memorie">Spatiu de memorie</string>
+    <string name="checkbox_este_oled">Este OLED</string>
+    <string name="btn_salveaza_tableta">Adauga tableta</string>
+</resources>

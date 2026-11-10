@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddTableta">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_id_tableta"
+        />
+    <EditText
+        android:id="@+id/Hozu_GabrielidTableta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_id_tableta"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_model"
+        />
+
+    <Spinner
+        android:id="@+id/Hozu_GabrielSpiner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_spatiu_memorie"
+        />
+    <EditText
+        android:id="@+id/Hozu_GabrielSpatiuMemorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_spatiu_memorie"
+        android:inputType="number"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_este_oled"
+        android:id="@+id/Hozu_GabrielCheckBox"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_salveaza_tableta"
+        android:id="@+id/Hozu_GabrielButton"
+        android:onClick="ReturneazaTableta"
+        />
+</LinearLayout>
